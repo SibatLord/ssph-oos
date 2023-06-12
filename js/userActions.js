@@ -184,7 +184,7 @@ function removeFromCart(id){
         return item.id != id;
     })
     localStorage.setItem('cart', JSON.stringify(cart))
-    location.href = ""
+    location.href = "cart.html"
 }
 
 function renderCheckout(){
@@ -216,7 +216,7 @@ function checkOut(){
     })
     localStorage.setItem('checkout', JSON.stringify(checkout))
     localStorage.setItem('cart', JSON.stringify([]))
-    location.href = '/checkout.html'
+    location.href = 'checkout.html'
 }
 
 function cartPcs_changed(id){
@@ -252,7 +252,7 @@ function placeOrder(ev){
     orders.push(order);
     localStorage.setItem('orders', JSON.stringify(orders))
     localStorage.setItem('checkout', JSON.stringify([]))
-    location.href = '/index.html'
+    location.href = 'index.html'
 }
 
 
@@ -281,7 +281,7 @@ function addCart(id){
     }
     cart.push(item)
     localStorage.setItem('cart', JSON.stringify(cart))
-    location.href = "/cart.html"
+    location.href = "cart.html"
 }
 
 function findItem(id){
