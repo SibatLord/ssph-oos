@@ -110,14 +110,14 @@ $(function(){
 })
 
 function countCart(){
-    if(!localStorage.getItem('cart') || JSON.parse(localStorage.getItem('cart')).length < 1){
+    if(!localStorage.getItem('cart') || JSON.parse(localStorage.getItem('cart')).length < 0){
         localStorage.setItem('cart', JSON.stringify([]))
     }
     $("#cart-badge").text(JSON.parse(localStorage.getItem('cart')).length)
 }
 
 function countOrders(){
-    if(!localStorage.getItem('orders') || JSON.parse(localStorage.getItem('orders')).length < 1){
+    if(!localStorage.getItem('orders') || JSON.parse(localStorage.getItem('orders')).length < 0){
         localStorage.setItem('orders', JSON.stringify([]))
     }
     $("#orders-badge").text(JSON.parse(localStorage.getItem('orders')).length)
@@ -187,7 +187,7 @@ function removeFromCart(id){
 }
 
 function renderCheckout(){
-    if(!localStorage.getItem('checkout') || JSON.parse(localStorage.getItem('checkout')).length < 1){
+    if(!localStorage.getItem('checkout') || JSON.parse(localStorage.getItem('checkout')).length < 0){
         localStorage.setItem('checkout', JSON.stringify([]))
     }
     const checkout = JSON.parse(localStorage.getItem('checkout'))
@@ -274,7 +274,7 @@ function showCartModal(id){
 
 function addCart(id){
     const item = findItem(id)
-    if(!localStorage.getItem('cart') || JSON.parse(localStorage.getItem('cart')).length < 1){
+    if(!localStorage.getItem('cart') || JSON.parse(localStorage.getItem('cart')).length < 0){
         localStorage.setItem('cart', JSON.stringify([]))
     }
     let cart = JSON.parse(localStorage.getItem('cart'))
