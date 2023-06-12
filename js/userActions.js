@@ -187,6 +187,9 @@ function removeFromCart(id){
 }
 
 function renderCheckout(){
+    if(!localStorage.getItem('checkout') || JSON.parse(localStorage.getItem('checkout')).length < 1){
+        localStorage.setItem('checkout', JSON.stringify([]))
+    }
     const checkout = JSON.parse(localStorage.getItem('checkout'))
     let total = 0;
     checkout.forEach(function(i){
